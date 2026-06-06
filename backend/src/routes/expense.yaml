@@ -1,0 +1,73 @@
+components:
+  schemas:
+    expense:
+      type: object
+      required:
+        - id
+        - category
+        - amount
+        - currency
+        - description
+        - transactionType
+        - recordedAt
+      properties:
+        id:
+          type: integer
+        category:
+          type: string
+        amount:
+          type: number
+          minimum: 0.01
+        currency:
+          type: string
+        description:
+          type: string
+        transactionType:
+          type: string
+          enum: [income, expense]
+        recordedAt:
+          type: string
+          format: date
+    expenseCreate:
+      type: object
+      required:
+        - category
+        - amount
+        - currency
+        - description
+        - transactionType
+        - recordedAt
+      properties:
+        category:
+          type: string
+        amount:
+          type: number
+          minimum: 0.01
+        currency:
+          type: string
+        description:
+          type: string
+        transactionType:
+          type: string
+          enum: [income, expense]
+        recordedAt:
+          type: string
+          format: date
+    expenseUpdate:
+      type: object
+      properties:
+        category:
+          type: string
+        amount:
+          type: number
+          minimum: 0.01
+        currency:
+          type: string
+        description:
+          type: string
+        transactionType:
+          type: string
+          enum: [income, expense]
+        recordedAt:
+          type: string
+          format: date

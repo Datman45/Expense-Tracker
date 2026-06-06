@@ -1,0 +1,43 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run schemas && npm run copyfiles && start /b tsc -w & nodemon dist/app.js",
+    "schemas": "npm run schemas:openapi && npm run schemas:typescript",
+    "schemas:openapi": "swagger-jsdoc -d src/routes/definition.yaml src/routes/**/*.ts \"src/routes/!(definition).yaml\"  -o src/schemas/openapi.json",
+    "schemas:typescript": "openapi-typescript src/schemas/openapi.json -o src/schemas/index.d.ts",
+    "copyfiles": "copyfiles -u 1 src/schemas/*.json dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-openapi-validator": "^5.6.2",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.21.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/pg": "^8.20.0",
+    "@types/swagger-ui-express": "^4.1.8",
+    "concurrently": "^9.2.1",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^3.1.14",
+    "openapi-typescript": "^7.13.0",
+    "swagger-jsdoc": "^6.2.8",
+    "typescript": "^5.9.3"
+  }
+}
