@@ -1,0 +1,10 @@
+openapi: 3.0.0
+
+info:
+  title: Expense Tracker API
+  version: 1.0.0
+tags:
+  - name: account
+    description: account registration and authentication
+  - name: expense
+    description: API endpoints for managing expenses
