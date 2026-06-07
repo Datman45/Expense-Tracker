@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run schemas && npm run copyfiles && start /b tsc -w & nodemon dist/app.js",
-    "build": "npm run schemas && tsc && npm run copyfiles"
+    "build": "npm run schemas && tsc && npm run copyfiles",
     "start": "node dist/app.js",
     "schemas": "npm run schemas:openapi && npm run schemas:typescript",
     "schemas:openapi": "swagger-jsdoc -d src/routes/definition.yaml src/routes/**/*.ts \"src/routes/!(definition).yaml\"  -o src/schemas/openapi.json",
