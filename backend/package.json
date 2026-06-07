@@ -8,11 +8,7 @@
     "build": "npm run schemas && tsc && npm run copyfiles",
     "start": "node dist/app.js",
     "schemas": "npm run schemas:openapi && npm run schemas:typescript",
-<<<<<<< HEAD
-    "schemas:openapi": "swagger-jsdoc -d src/routes/definition.yaml src/routes/**/*.ts \"src/routes/!(definition).yaml\" -o src/schemas/openapi.json",
-=======
     "schemas:openapi": "swagger-jsdoc -d src/routes/definition.yaml src/routes/*.ts src/routes/**/*.ts \"src/routes/!(definition).yaml\" -o src/schemas/openapi.json",
->>>>>>> 5b40006 (Fix OpenAPI route scan for expenses)
     "schemas:typescript": "openapi-typescript src/schemas/openapi.json -o src/schemas/index.d.ts",
     "copyfiles": "copyfiles -u 1 src/schemas/*.json dist",
     "test": "echo \"Error: no test specified\" && exit 1"
