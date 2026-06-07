@@ -72,19 +72,19 @@ export default function Expenses() {
                 <td className="actions-buttons">
                   <Link
                     className="btn btn-secondary"
-                    href={`/expenses/view?id=${expense.id}`}
+                    href={`/expenses/view/${expense.id}`}
                   >
                     View
                   </Link>
                   <Link
                     className="btn btn-success"
-                    href={`/expenses/edit?id=${expense.id}`}
+                    href={`/expenses/edit/${expense.id}`}
                   >
                     Edit
                   </Link>
                   <Link
                     className="btn btn-danger"
-                    href={`/expenses/delete?id=${expense.id}`}
+                    href={`/expenses/delete/${expense.id}`}
                   >
                     Delete
                   </Link>

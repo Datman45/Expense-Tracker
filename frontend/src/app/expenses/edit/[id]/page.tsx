@@ -1,16 +1,14 @@
 "use client";
 
 import { ExpensesService } from "@/services/ExpensesService";
-import { IExpense } from "@/types/domain/IExpense";
-import { useSearchParams } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { AccountContext } from "@/contex/AccountContex";
 
 export default function EditExpense() {
-  const searchParams = useSearchParams();
-  const idParam = Number(searchParams.get("id"));
+  const params = useParams();
+  const idParam = Number(params.id);
   const [error, setErrorMessage] = useState<string[]>();
   const expenseService = new ExpensesService();
   const router = useRouter();

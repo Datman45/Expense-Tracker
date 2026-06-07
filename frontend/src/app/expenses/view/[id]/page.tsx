@@ -1,15 +1,14 @@
 "use client";
 
 import { IExpense } from "@/types/domain/IExpense";
-import { useSearchParams } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { ExpensesService } from "@/services/ExpensesService";
 import { AccountContext } from "@/contex/AccountContex";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 export default function ViewExpenses() {
-  const searchParams = useSearchParams();
-  const idParam = Number(searchParams.get("id"));
+  const params = useParams();
+  const idParam = Number(params.id);
   const expenseService = new ExpensesService();
   const [data, setData] = useState<IExpense>();
   const [errors, setErrorMessage] = useState<string[]>();
@@ -37,7 +36,7 @@ export default function ViewExpenses() {
       }
     };
     fetchData();
-  }, []);
+  }, [idParam, accountInfo]);
   return (
     <>
       <div className="text-centered-content">

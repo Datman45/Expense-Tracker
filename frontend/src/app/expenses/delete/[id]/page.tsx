@@ -1,16 +1,15 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { IExpense } from "@/types/domain/IExpense";
 import { ExpensesService } from "@/services/ExpensesService";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { AccountContext } from "@/contex/AccountContex";
 
 export default function DeleteExpense() {
+  const params = useParams();
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const idParam = Number(searchParams.get("id"));
+  const idParam = Number(params.id);
   const [data, setData] = useState<IExpense>();
   const [errors, setErrorMessage] = useState<string[]>();
   const expenseService = new ExpensesService();
