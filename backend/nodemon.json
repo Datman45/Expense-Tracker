@@ -1,6 +1,7 @@
 {
-  "events": {
-    "restart": "if not %FILENAME:src\\routes=%==%FILENAME%(npm run -s schemas && npm run -s copyfiles)"
-  },
-  "ext": "js,mjs,json,ts,yaml"
+  "watch": ["dist/app.js"],
+  "ignore": ["dist/schemas/*", "src/schemas/*", "node_modules"],
+  "ext": "js",
+  "delay": "500",
+  "exec": "node dist/app.js"
 }
