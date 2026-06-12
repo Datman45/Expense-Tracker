@@ -12,10 +12,6 @@ cd backend
 ``` bash
 npm install
 ```
-- Start backend from the root folder:
-``` bash
-npm run dev
-```
 - Go to the frontend root folder
 ``` bash
 cd frontend
@@ -23,6 +19,34 @@ cd frontend
 - Download dependencies
 ``` bash
 npm install
+```
+- Open `backend/nodemon.json` and replace its contents with:
+```json
+{
+  "watch": ["dist/app.js"],
+  "ignore": ["dist/schemas/*", "src/schemas/*", "node_modules"],
+  "ext": "js",
+  "delay": "500",
+  "exec": "node dist/app.js"
+}
+```
+- Update the `baseURL` in `frontend/src/services/BaseService.ts`:
+```text
+http://localhost:3000
+```
+- Open `backend/src/db/connection.ts` and remove the following lines:
+```bash
+ ssl: {
+    rejectUnauthorized: false,
+  },
+````
+- Build backend from the root folder:
+``` bash
+npm run build
+```
+- Start backend from the root folder:
+``` bash
+npm run dev
 ```
 - Start frontend from the root folder:
 ``` bash
@@ -33,7 +57,6 @@ npm run dev
 - Create tables named `users` and `expenses`
 
 ### Users Table
-
 ```sql
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -45,7 +68,6 @@ CREATE TABLE users (
 ```
 
 ### Expenses Table
-
 ```sql
 CREATE TABLE expenses (
     id SERIAL PRIMARY KEY,
@@ -64,7 +86,6 @@ CREATE TABLE expenses (
 ```
 
 ### Environment Variables
-
 Create a `.env` file in the backend root folder:
 
 ```env
@@ -82,7 +103,6 @@ CLIENT_URL=http://localhost:3001
 ```
 
 ### Open Application
-
 Frontend:
 
 ```
@@ -90,19 +110,23 @@ http://localhost:3001
 ```
 
 Backend API:
-
 ```
 http://localhost:3000
 ```
 
 Swagger Documentation:
-
 ```
 http://localhost:3000/api-docs
 ```
 
-## Features (In progress)
-
+## Features
+- CRUD operations for user-specific expense management
+- Authentication and authorization using JWT
+- PostgreSQL database integration
+- Layered backend architecture (routes, controllers, DAOs, middleware)
+- Protected routes and user-specific data access
+- REST API built with Express.js
+- OpenAPI/Swagger API documentation
 
 ## Tech Stack
 - TypeScript
@@ -115,4 +139,4 @@ http://localhost:3000/api-docs
 ## Live Demo
 [View Demo](https://expense-tracker-chi-plum-24.vercel.app/)
 
-## Screenshots (In progress)
+## Screenshots (In Progress)
