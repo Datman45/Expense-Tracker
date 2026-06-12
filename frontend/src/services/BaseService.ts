@@ -6,7 +6,7 @@ export abstract class BaseService {
 
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: "https://expense-tracker-hfrc.onrender.com",
+      baseURL: "http://localhost:3000",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
