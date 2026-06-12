@@ -2,9 +2,9 @@
   "name": "expense-tracker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/app.js",
   "scripts": {
-    "dev": "npm run schemas && npm run copyfiles && concurrently \"tsc -w\" \"nodemon dist/app.js\"",
+    "dev": "npm run schemas && npm run copyfiles && concurrently \"tsc -w\" \"nodemon\"",
     "build": "npm run schemas && tsc && npm run copyfiles",
     "start": "node dist/app.js",
     "schemas": "npm run schemas:openapi && npm run schemas:typescript",
