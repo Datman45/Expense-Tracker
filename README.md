@@ -30,16 +30,16 @@ npm install
   "exec": "node dist/app.js"
 }
 ```
-- Update the `baseURL` in `frontend/src/services/BaseService.ts`:
-```text
-http://localhost:3000
-```
 - Open `backend/src/db/connection.ts` and remove the following lines:
 ```bash
  ssl: {
     rejectUnauthorized: false,
   },
 ````
+- Update the `baseURL` in `frontend/src/services/BaseService.ts`:
+```text
+http://localhost:3000
+```
 - Build backend from the root folder:
 ``` bash
 npm run build
