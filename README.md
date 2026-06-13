@@ -139,7 +139,7 @@ http://localhost:3000/api-docs
 ## Live Demo
 [View Demo](https://expense-tracker-chi-plum-24.vercel.app/)
 
-## Screenshots (In Progress)
+## Screenshots
 
 ### Login Page
 
