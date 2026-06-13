@@ -140,3 +140,15 @@ http://localhost:3000/api-docs
 [View Demo](https://expense-tracker-chi-plum-24.vercel.app/)
 
 ## Screenshots (In Progress)
+
+### Login Page
+
+<img width="2552" height="1274" alt="Login Page" src="https://github.com/user-attachments/assets/11df7c97-1a55-4ed2-915a-8eb40fcff85a" />
+
+### Expenses List Page
+
+<img width="2552" height="1274" alt="Expenses List Page" src="https://github.com/user-attachments/assets/e7218ba5-5f80-4bd9-89ce-06d4ee452f4b" />
+
+### Expense Create Form Page
+
+<img width="2552" height="1274" alt="Expense Create Form Page" src="https://github.com/user-attachments/assets/a4343345-6ddb-45d2-b03e-b4c076888d6f" />
