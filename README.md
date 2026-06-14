@@ -1,7 +1,7 @@
 # Expense Tracker
 TypeScript/React/Next.js/Express.js/PostgreSQL full-stack application for managing personal expenses with authentication and authorization.
 
-## Installation (In Progress)
+## Installation
 - Clone or download the repository
 - Open the project in Visual Studio Code
 - Go to the backend root folder
@@ -12,6 +12,12 @@ cd backend
 ``` bash
 npm install
 ```
+- Open `backend/src/db/connection.ts` and remove the following lines:
+```ts
+ ssl: {
+    rejectUnauthorized: false,
+  },
+````
 - Go to the frontend root folder
 ``` bash
 cd frontend
@@ -20,29 +26,11 @@ cd frontend
 ``` bash
 npm install
 ```
-- Open `backend/src/db/connection.ts` and remove the following lines:
-```bash
- ssl: {
-    rejectUnauthorized: false,
-  },
-````
 - Update the `baseURL` in `frontend/src/services/BaseService.ts`:
 ```text
 http://localhost:3000
 ```
-- Build backend from the root folder:
-``` bash
-npm run build
-```
-- Start backend from the root folder:
-``` bash
-npm run dev
-```
-- Start frontend from the root folder:
-``` bash
-npm run dev
-```
-- Download and open pgAdmin
+- Install and open pgAdmin
 - Create a PostgreSQL database named `expense_tracker_db`
 - Create tables named `users` and `expenses`
 
@@ -90,6 +78,20 @@ DB_PASSWORD=your_password
 JWT_SECRET=your_secret_key
 
 CLIENT_URL=http://localhost:3001
+```
+
+### Run Application
+- Build backend from the root folder:
+``` bash
+npm run build
+```
+- Start backend from the root folder:
+``` bash
+npm run dev
+```
+- Start frontend from the root folder:
+``` bash
+npm run dev
 ```
 
 ### Open Application
