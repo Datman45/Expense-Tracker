@@ -20,16 +20,6 @@ cd frontend
 ``` bash
 npm install
 ```
-- Open `backend/nodemon.json` and replace its contents with:
-```json
-{
-  "watch": ["dist/app.js"],
-  "ignore": ["dist/schemas/*", "src/schemas/*", "node_modules"],
-  "ext": "js",
-  "delay": "500",
-  "exec": "node dist/app.js"
-}
-```
 - Open `backend/src/db/connection.ts` and remove the following lines:
 ```bash
  ssl: {
